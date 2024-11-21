@@ -9,7 +9,7 @@ class HuaweiHilinkApiServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/huawei.php' => config_path('huawei.php'),
+            __DIR__ . '/config/huawei.php' => config_path('huawei.php'),
         ], 'config');
     }
 
