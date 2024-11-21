@@ -8,9 +8,9 @@ class HuaweiHilinkApiServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        $this->publishes([
-            __DIR__ . '/config/huawei.php' => config_path('huawei.php'),
-        ], 'config');
+        // $this->publishes([
+        //     __DIR__ . '/config/huawei.php' => config_path('huawei.php'),
+        // ], 'config');
     }
 
     /**
@@ -18,6 +18,20 @@ class HuaweiHilinkApiServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->setupAssets();
+    }
+
+    /**
+     * Setup package assets.
+     *
+     * @return void
+     */
+    protected function setupAssets()
+    {
+        $this->mergeConfigFrom($config = __DIR__ . '/config/huawei.php', 'huawei');
+
+        if ($this->app->runningInConsole()) {
+            $this->publishes([$config => config_path('huawei.php')], 'huawei');
+        }
     }
 }
