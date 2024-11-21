@@ -10,7 +10,9 @@ This package provides the function of reading SMS messages from Hilink Huawei. I
 - Laravel >= 9.0
 
 ## Installation
+
 To start using the package, you need to install it via Composer:
+
 ```sh
 composer require lipit146/huawei-hilink-api
 ```
@@ -31,6 +33,7 @@ Add the package service provider in your `config/app.php`
     Lipit146\HuaweiHilinkApi\HuaweiHilinkApiServiceProvider::class,
 ];
 ```
+
 ## Publish package assets
 
 Publish the package asset files using this `php artisan` command
@@ -38,6 +41,7 @@ Publish the package asset files using this `php artisan` command
 ```sh
 $ php artisan vendor:publish --provider="Lipit146\HuaweiHilinkApi\HuaweiHilinkApiServiceProvider"
 ```
+
 ## Security Vulnerabilities
 
 If you discover a security vulnerability within this project, please email me via [songviytuong@gmail.com](mailto:songviytuong@gmail.com).
