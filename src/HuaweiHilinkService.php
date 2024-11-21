@@ -172,6 +172,7 @@ class HuaweiHilinkService
     public function __construct()
     {
         $this->client = new HuaweiHilinkClient();
+        $this->routerAddress = config('huawei.router_address_ip');
     }
 
     /**
